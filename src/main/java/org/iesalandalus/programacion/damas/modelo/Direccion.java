@@ -9,6 +9,9 @@ public enum Direccion {
 
     private final String cadenaAMostrar;
 
+    Direccion(String cadenaAMostrar) {
+        this.cadenaAMostrar = cadenaAMostrar;
+    }
 
 
 
