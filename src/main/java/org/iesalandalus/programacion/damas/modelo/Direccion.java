@@ -13,6 +13,7 @@ public enum Direccion {
         this.cadenaAMostrar = cadenaAMostrar;
     }
 
-
-
+    public String toString() {
+        return cadenaAMostrar;
+    }
 }
