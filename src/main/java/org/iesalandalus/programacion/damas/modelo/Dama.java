@@ -44,13 +44,7 @@ public class Dama {
             throw new IllegalArgumentException("El número de pasos no puede ser menor a 1");
         }
 
-        if (!esDamaEspecial) {
-            pasos = 1;
-            if ((color == Color.BLANCO && (direccion != Direccion.NORESTE && direccion != Direccion.NOROESTE)) ||
-                    (color == Color.NEGRO && (direccion != Direccion.SURESTE && direccion != Direccion.SUROESTE))) {
-                throw new OperationNotSupportedException("Movimiento no valido para una dama que no es especial.");
-            }
-        }
+
 
         int nuevaFila = posicion.getFila();
         char nuevaColumna = posicion.getColumna();
@@ -98,6 +92,6 @@ public class Dama {
 
     @Override
     public String toString() {
-        return "Dama" + "color=" + color + ", posicion=" + posicion + ", esDamaEspecial=" + esDamaEspecial;
+        return "Dama de color " + color +", en la posicion " + posicion + ", esDamaEspecial=" + esDamaEspecial;
     }
 }

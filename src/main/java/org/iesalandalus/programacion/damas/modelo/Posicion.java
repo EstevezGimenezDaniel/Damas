@@ -3,7 +3,6 @@ package org.iesalandalus.programacion.damas.modelo;
 import java.util.Objects;
 
 public class Posicion {
-
     private int fila;
     private char columna;
 
@@ -13,7 +12,11 @@ public class Posicion {
     }
 
     public Posicion(Posicion posicion) {
-        this(posicion.fila, posicion.columna);
+        if (posicion == null) {
+            throw new IllegalArgumentException("No se admite una posicion nula");
+        }
+        this.fila = posicion.fila;
+        this.columna = posicion.columna;
     }
 
     public int getFila() {
@@ -36,16 +39,15 @@ public class Posicion {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(fila, columna);
+    }
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Posicion posicion = (Posicion) obj;
         return fila == posicion.fila && columna == posicion.columna;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(fila, columna);
     }
 
     @Override
