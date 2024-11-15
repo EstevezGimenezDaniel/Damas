@@ -5,12 +5,8 @@ import org.iesalandalus.programacion.damas.modelo.Color;
 import org.iesalandalus.programacion.damas.modelo.Direccion;
 import org.iesalandalus.programacion.damas.modelo.Dama;
 
-import java.util.concurrent.CompletionService;
-
 public class MainApp {
-
     private static Dama dama;
-
     public static void main(String[] args) {
         int opcion;
         do {
@@ -18,9 +14,7 @@ public class MainApp {
             opcion = Consola.elegirOpcionMenu();
             ejecutarOpcion(opcion);
         } while (opcion != 4);
-        Consola.despedirse();
     }
-
     private static void ejecutarOpcion(int opcion) {
         switch (opcion) {
             case 1 -> crearDamaDefecto();
@@ -34,13 +28,12 @@ public class MainApp {
         dama = new Dama();
         System.out.println("Dama creada por defecto: " + dama);
     }
-
     private static void crearDamaColor() {
+
         Color color = Consola.elegirColor();
         dama = new Dama(color);
         System.out.println("Dama creada con el color elegido: " + dama);
     }
-
     private static void mover() {
         if (dama == null) {
             System.out.println("Debes crear una dama primero");
@@ -53,6 +46,8 @@ public class MainApp {
         try {
             dama.mover(direccion, pasos);
             System.out.println("Dama movida a la nueva posicion: " + dama);
+        } catch (OperationNotSupportedException o) {
+            System.out.println("ERROR: Operacion no soportada" + o.getMessage());
         } catch (Exception e) {
             System.out.println("Error al mover la dama: " + e.getMessage());
         }
@@ -64,6 +59,4 @@ public class MainApp {
             System.out.println("La dama es " + dama);
         }
     }
-
-
 }

@@ -13,7 +13,7 @@ public class Posicion {
 
     public Posicion(Posicion posicion) {
         if (posicion == null) {
-            throw new IllegalArgumentException("No se admite una posicion nula");
+            throw new NullPointerException("ERROR: No es posible copiar una posicion nula.");
         }
         this.fila = posicion.fila;
         this.columna = posicion.columna;
@@ -24,7 +24,7 @@ public class Posicion {
     }
     public void setFila(int fila) {
         if (fila < 1 || fila > 8) {
-            throw new IllegalArgumentException("La fila debe ser entre 1 y 8");
+            throw new IllegalArgumentException("ERROR: Fila no valida.");
         }
         this.fila = fila;
     }
@@ -33,7 +33,7 @@ public class Posicion {
     }
     public void setColumna(char columna) {
         if (columna < 'a' || columna > 'h') {
-            throw new IllegalArgumentException("La columna debe ser entre a y h");
+            throw new IllegalArgumentException("ERROR: Columna no valida.");
         }
         this.columna = columna;
     }

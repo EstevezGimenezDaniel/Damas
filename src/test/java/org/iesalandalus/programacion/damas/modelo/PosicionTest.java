@@ -10,17 +10,17 @@ class PosicionTest {
 	
 	private static final String FILA_NO_ESPERADA = "La fila devuelta no es la esperada.";
 	private static final String COLUMNA_NO_ESPERADA = "La columna devuelta no es la esperada.";
-	private static final String POSICION_NO_ESPERADA = "La posición copiada debería ser la misma que la pasada como parámetro.";
+	private static final String POSICION_NO_ESPERADA = "La posicion copiada debería ser la misma que la pasada como parametro.";
 	private static final String CADENA_NO_ESPERADA = "La cadena devuelta no es la esperada.";
-	private static final String EXCEPCION_NO_VALIDA = "El tipo de excepción no es válido o no ha saltado.";
-	private static final String OBJETOS_DEBERIAN_SER_IGUALES = "Los objetos deberían ser iguales.";
-	private static final String OBJETOS_DEBERIAN_SER_DIFERENTES = "Los objetos deberían ser diferentes.";
-	private static final String HASHS_DEBERIAN_SER_IGUALES = "Los hashs deberían ser iguales.";
-	private static final String HASHS_DEBERIAN_SER_DIFERENTES = "Los hashs deberían ser diferentes.";
-	private static final String MENSAJE_ERROR_FILA_NO_VALIDA = "ERROR: Fila no válida.";
-	private static final String MENSAJE_ERROR_COLUMNA_NO_VALIDA = "ERROR: Columna no válida.";
-	private static final String MENSAJE_ERROR_COPIAR_POSICION_NULA = "ERROR: No es posible copiar una posición nula.";
-	private static final String MENSAJE_NO_CORRECTO = "El mensaje devuelto por la excepción no es correcto.";
+	private static final String EXCEPCION_NO_VALIDA = "El tipo de excepcion no es válido o no ha saltado.";
+	private static final String OBJETOS_DEBERIAN_SER_IGUALES = "Los objetos deberian ser iguales.";
+	private static final String OBJETOS_DEBERIAN_SER_DIFERENTES = "Los objetos deberian ser diferentes.";
+	private static final String HASHS_DEBERIAN_SER_IGUALES = "Los hashs deberian ser iguales.";
+	private static final String HASHS_DEBERIAN_SER_DIFERENTES = "Los hashs deberian ser diferentes.";
+	private static final String MENSAJE_ERROR_FILA_NO_VALIDA = "ERROR: Fila no valida.";
+	private static final String MENSAJE_ERROR_COLUMNA_NO_VALIDA = "ERROR: Columna no valida.";
+	private static final String MENSAJE_ERROR_COPIAR_POSICION_NULA = "ERROR: No es posible copiar una posicion nula.";
+	private static final String MENSAJE_NO_CORRECTO = "El mensaje devuelto por la excepcion no es correcto.";
 
 
 	@Test

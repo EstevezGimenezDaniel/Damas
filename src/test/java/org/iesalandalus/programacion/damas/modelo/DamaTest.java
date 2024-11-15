@@ -8,13 +8,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DamaTest {
-
 	private static final String COLOR_NO_ESPERADO = "El color no es el esperado.";
-	private static final String POSICION_NO_ESPERADA = "La posición no es la esperada.";
+	private static final String POSICION_NO_ESPERADA = "La posicion no es la esperada.";
 	private static final String CADENA_NO_ESPERADA = "La cadena devuelta no es la esperada.";
-	private static final String EXCEPCION_NO_VALIDA = "El tipo de excepción no es válida o no ha saltado.";
+	private static final String EXCEPCION_NO_VALIDA = "El tipo de excepción no es valida o no ha saltado.";
 	private static final String MENSAJE_ERROR_COLOR_NULO = "ERROR: El color no puede ser nulo.";
-	private static final String MENSAJE_ERROR_DIRECCION_NULA = "ERROR: La dirección no puede ser nula.";
+	private static final String MENSAJE_ERROR_DIRECCION_NULA = "ERROR: La direccion no puede ser nula.";
 	private static final String MENSAJE_ERROR_MOVIMIENTO_NO_VALIDO = "ERROR: Movimiento no permitido.";
 	private static final String MENSAJE_ERROR_MOVIMIENTO_NO_VALIDO_DAMA_ESPECIAL = "ERROR: Las damas normales solo se pueden mover 1 casilla.";
 	private static final String MENSAJE_NO_CORRECTO = "El mensaje devuelto por la excepción no es correcto.";
@@ -28,12 +27,10 @@ class DamaTest {
 		damaBlanca = new Dama(Color.BLANCO);
 		damaNegra = new Dama(Color.NEGRO);
 	}
-
 	@Test
 	void constructores()
 	{
 		// Test de constructor por defecto
-
 		damaBlanca = new Dama();
 		assertEquals(Color.BLANCO, damaBlanca.getColor(), COLOR_NO_ESPERADO);
 		assertTrue(damaBlanca.getPosicion().getFila()==1||damaBlanca.getPosicion().getFila()==2||damaBlanca.getPosicion().getFila()==3, POSICION_NO_ESPERADA);
@@ -44,7 +41,6 @@ class DamaTest {
 		NullPointerException excepcion = assertThrows(NullPointerException.class, () -> { new Dama(null);}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_COLOR_NULO, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
 	}
-
 	@Test
 	void moverIncorrectamente() throws OperationNotSupportedException
 	{
@@ -79,7 +75,6 @@ class DamaTest {
 		excepcionMovimiento = assertThrows(OperationNotSupportedException.class, () -> { damaNegra.mover(Direccion.SUROESTE, 2); }, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_MOVIMIENTO_NO_VALIDO_DAMA_ESPECIAL, excepcionMovimiento.getMessage(), MENSAJE_NO_CORRECTO);
 	}
-	
 	@Test
 	void moverCorrectamente() throws OperationNotSupportedException {
 
@@ -104,8 +99,6 @@ class DamaTest {
 		assertEquals(new Posicion(4, 'f'), damaNegra.getPosicion(), POSICION_NO_ESPERADA);
 		damaNegra.mover(Direccion.NOROESTE, 4);
 		assertEquals(new Posicion(8, 'b'), damaNegra.getPosicion(), POSICION_NO_ESPERADA);
-
-
 	}
 
 	@Test
@@ -114,5 +107,4 @@ class DamaTest {
 		damaBlanca = new Dama(Color.BLANCO);
 		assertEquals("color=Blanco, posicion=(fila="+damaBlanca.getPosicion().getFila()+", columna="+damaBlanca.getPosicion().getColumna()+")", damaBlanca.toString(), CADENA_NO_ESPERADA);
 	}
-
 }
