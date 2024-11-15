@@ -6,6 +6,7 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
     private Consola() {
+
     }
     public static void mostrarMenu() {
         System.out.println("Menú de opciones");
