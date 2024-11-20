@@ -85,6 +85,7 @@ public class Dama {
         int nuevaFila = this.posicion.getFila();
         char nuevaColumna = this.posicion.getColumna();
 
+
         switch (direccion) {
             case NORESTE:
                 nuevaFila += pasos;
